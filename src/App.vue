@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <h1>Ciao</h1>
+    <PageHeader />
   </div>
 </template>
 
 <script>
-// import HelloWorld from "./components/HelloWorld.vue";
+import PageHeader from "./components/PageHeader.vue";
 
 export default {
   name: "App",
   components: {
-    // HelloWorld,
+    PageHeader
   },
 };
 </script>
