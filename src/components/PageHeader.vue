@@ -8,20 +8,8 @@
         <!-- Header nav -->
         <nav>
             <ul class="menu">
-                <li>
-                    <a href="#">Home</a>
-                </li>
-
-                <li class="current">
-                    <a href="#">Prodotti</a>
-                </li>
-
-                <li>
-                    <a href="#">Chi siamo</a>
-                </li>
-
-                <li>
-                    <a href="#">Contatti</a>
+                <li v-for="link, index in menuLinks" :key="index" :class="{ 'current': link.current }">
+                    <a :href="link.url">{{ link.text }}</a>
                 </li>
             </ul>
         </nav>
@@ -30,7 +18,33 @@
 
 <script>
 export default {
-    name: "PageHeader"
+    name: "PageHeader",
+    data() {
+        return {
+            menuLinks: [
+                {
+                    text: 'Home',
+                    url: '#',
+                    current: false
+                },
+                {
+                    text: 'Prodotti',
+                    url: '#',
+                    current: true
+                },
+                {
+                    text: 'Chi siamo',
+                    url: '#',
+                    current: false
+                },
+                {
+                    text: 'Contatti',
+                    url: '#',
+                    current: false
+                }
+            ],
+        };
+    }
 }
 </script>
 
